@@ -1,0 +1,9 @@
+# Editors
+.idea/
+.vscode/
+
+# Compiled Binaries
+bin/
+
+# Compilation Database
+compile_commands.json
