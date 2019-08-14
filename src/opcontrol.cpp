@@ -1,5 +1,5 @@
+#include "holonomic_robot.hpp"
 #include "main.h"
-#include "robot.hpp"
 
 /**
  * Runs the operator control code. This function will be started in its own task
@@ -16,7 +16,7 @@
  */
 void opcontrol() {
 	std::uint32_t now = pros::millis();
-	auto& robot = Robot::get_robot();
+	auto& robot = HolonomicRobot::get_robot();
 	while (true) {
 		robot.drive();
 		pros::Task::delay_until(&now, 20);
