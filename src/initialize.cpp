@@ -1,8 +1,8 @@
 #include <exception>
 #include <iostream>
 
-#include "holonomic_robot.hpp"
 #include "main.h"
+#include "robot_factory.hpp"
 
 /**
  * Runs initialization code. This occurs as soon as the program is started.
@@ -12,8 +12,8 @@
  */
 void initialize() {
 	try {
-		auto& robot = HolonomicRobot::get_robot();
-		robot.begin_tasks();
+		Robot* robot = RobotFactory::instance()->create_robot("Holonomic");
+		robot->begin_tasks();
 	} catch (std::exception& ex) {
 		std::cerr << "Initialization exception: " << ex.what() << std::endl;
 		while (true) {
