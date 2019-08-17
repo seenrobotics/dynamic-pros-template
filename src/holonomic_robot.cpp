@@ -9,8 +9,8 @@
 #include "main.h"
 
 HolonomicRobot::HolonomicRobot()
-    : controller{CONTROLLER_MASTER},
-      partner{CONTROLLER_PARTNER},
+    : controller{pros::E_CONTROLLER_MASTER},
+      partner{pros::E_CONTROLLER_PARTNER},
       mtr_lfront{MTR_PORT_LFRONT},
       mtr_rfront{MTR_PORT_RFRONT},
       mtr_lback{MTR_PORT_LBACK},
@@ -21,17 +21,6 @@ HolonomicRobot::HolonomicRobot()
       mtr_util4{MTR_PORT_UTIL4},
       driving_style{DrivingStyle::SPLIT_ARCADE_DRIVING},
       drive_type{DriveType::X_DRIVE} {}
-
-HolonomicRobot::~HolonomicRobot() {}
-
-/**
- * Get instance of Robot singleton
- */
-HolonomicRobot& HolonomicRobot::get_robot() {
-	static HolonomicRobot instance;
-	// volatile
-	return instance;
-}
 
 /**
  * Begin robot tasks
