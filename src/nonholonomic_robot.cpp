@@ -35,4 +35,13 @@ void NonHolonomicRobot::drive() {}
 /**
  * Stop all motors
  */
-void NonHolonomicRobot::stop() {}
+void NonHolonomicRobot::stop() {
+	mtr_lfront.moveVoltage(0);
+	mtr_lfront.moveVoltage(0);
+	mtr_rfront.moveVoltage(0);
+	mtr_lback.moveVoltage(0);
+	mtr_rback.moveVoltage(0);
+	mtr_util1.moveVoltage(0);
+	mtr_util2.moveVoltage(0);
+	mtr_util3.moveVoltage(0);
+}
