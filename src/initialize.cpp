@@ -1,6 +1,7 @@
 #include <exception>
 #include <iostream>
 
+#include "globals.hpp"
 #include "main.h"
 #include "robot_factory.hpp"
 
@@ -12,7 +13,6 @@
  */
 void initialize() {
 	try {
-		Robot* robot = RobotFactory::instance()->create_robot("Holonomic");
 		robot->begin_tasks();
 	} catch (std::exception& ex) {
 		std::cerr << "Initialization exception: " << ex.what() << std::endl;
